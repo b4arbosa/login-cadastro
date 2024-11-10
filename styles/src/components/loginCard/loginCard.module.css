@@ -1,10 +1,9 @@
 .card {
     background-color: #ffff;
-    width: 400px;
-    padding: 30px 20px;
-    border-radius: 10px;
+    width: 550px;
+    padding: 30px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -12,7 +11,8 @@
 }
 
 .title {
-    margin-bottom: 10px;
-    color: orange;
-    font-size: 36px;
+    color: #F4882A;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: -20px;
 }

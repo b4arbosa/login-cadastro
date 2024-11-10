@@ -48,43 +48,43 @@ export default function CadastroPage() {
 
         <div className={styles.background}>
 
-            <header className='text-white'>
-                teste
+            <header className={styles.header}>
+                <h2 className={styles.headertitle}>ORGANIZA</h2>
+                <h2 className={styles.headertitle}>ORGANIZE SUAS FINANÇAS</h2>
             </header>
-            <main>
-
+            <main className={styles.main}>
                 <section>
                 <LoginCard title="Cadastro">
                 <form className={styles.form} onSubmit={handleForm}>
-                <label htmlFor="nome">Nome e Sobrenome</label>
-                <Input id="nome" type="text" placeholder="Seu nome" required value={formData.name} onChange={(e) => {handleFormEdit(e, 'name')}} />
+                <label className={styles.label} htmlFor="nome">Nome e Sobrenome</label>
+                <Input id="nome" type="text" placeholder="Nome Sobrenome" required value={formData.name} onChange={(e) => {handleFormEdit(e, 'name')}} />
 
-                <div class="div-label">
-                    <div>
-                <label htmlFor="telefone">Telefone/Celular</label>
-                <Input id="telefone" type="string" placeholder="(11)1111-1111" required value={formData.number} onChange={(e) => {handleFormEdit(e, 'number')}} />
+                <div className={styles.numberdate}>
+                    <div className={styles.labelinput}>
+                <label className={styles.label} htmlFor="telefone">Telefone/Celular</label>
+                <Input id="telefone" type="string" placeholder="(11) 1111-1111" required value={formData.number} onChange={(e) => {handleFormEdit(e, 'number')}} />
                     </div>
-                    <div>
-                <label htmlFor="nascimento">Data de Nascimento</label>
+                    <div className={styles.labelinput}>
+                <label className={styles.label} htmlFor="nascimento">Data de Nascimento</label>
                 <Input id='nascimento' type="date" required value={formData.date} onChange={(e) => {handleFormEdit(e, 'date')}} />
                     </div>
                 </div>
 
 
-                <label htmlFor="email">Endereço de Email</label>
-                <Input id="email" type="email" placeholder="Seu e-mail" required value={formData.email} onChange={(e) => {handleFormEdit(e, 'email')}} />
-                <label htmlFor="senha">Senha</label>
-                <Input id='senha' type="password" placeholder="Sua senha" required value={formData.password} onChange={(e) => {handleFormEdit(e, 'password')}} />
+                <label className={styles.label} htmlFor="email">Endereço de E-mail</label>
+                <Input id="email" type="email" placeholder="seuemail@email.com" required value={formData.email} onChange={(e) => {handleFormEdit(e, 'email')}} />
+                <label className={styles.label} htmlFor="senha">Senha</label>
+                <Input id='senha' type="password" placeholder="***************" required value={formData.password} onChange={(e) => {handleFormEdit(e, 'password')}} />
                 <Button type="submit">Cadastrar</Button>
                 {error && <p className={styles.error}>{error}</p>}
-                <Link href="/login">Já possui uma conta?</Link>
+                <Link className={styles.link} href="/login">Já possui uma conta? Login</Link>
                 </form>
                 </LoginCard>
                 </section>
                 <section>
-                    <h1>teste</h1>
+                    <h2 className={styles.headertitle}>IMAGEM</h2>
                 </section>
-            
+        
             </main>
         </div>
     )

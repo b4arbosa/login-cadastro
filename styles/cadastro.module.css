@@ -1,9 +1,27 @@
 .background {
-    background-color: white;
+    background-color: #FAE8B7;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 150px;
+}
+
+.header {
+    height: 240px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 120px;
+    align-items: center;
 }
 
 .form {
@@ -16,7 +34,31 @@
     color: #E84747;
 }
 
-.label-input {
+.numberdate {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between; 
+    box-sizing: border-box;
+}
+
+.labelinput {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.link {
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headertitle {
+    font-size: 50px;
+    color: #F4882A;
+    font-weight: bold;
 }
