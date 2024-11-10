@@ -1,0 +1,22 @@
+.background {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error {
+    color: #E84747;
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column;
+}
