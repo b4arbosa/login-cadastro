@@ -69,7 +69,7 @@ export default function LoginPage() {
                         <div className={styles.espaco}></div>
                         <form className={styles.form} onSubmit={handleForm}>
                         <label className={styles.label} htmlFor="email">E-mail</label>
-                        <Input type="email" id="email" placeholder="seuemail@hotmail.com" value={form.email} required onChange={(e) => {handleChangeForm(e, 'email')}}/>
+                        <Input type="email" id="email" placeholder="seuemail@email.com" value={form.email} required onChange={(e) => {handleChangeForm(e, 'email')}}/>
                         <label className={styles.label} htmlFor="senha">Senha</label>
                         <Input type="password" id="senha" placeholder="**************" value={form.password} required onChange={(e) => {handleChangeForm(e, 'password')}} />
                         {error && <p className={styles.error}>{error}</p>}
