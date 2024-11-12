@@ -14,6 +14,8 @@ export default function CadastroPage() {
         name: '',
         email: '',
         password: '',
+        number: '',
+        date: ''
     })
 
     const [error, setError] = useState('')
@@ -34,7 +36,7 @@ export default function CadastroPage() {
                 body: JSON.stringify(formData)
             })
             const json = await response.json()
-            if (response.status !==201) throw new Error("A senha deve conter pelo menos 8 caracteres")
+            if (response.status !==201) throw new Error(json)
 
           setCookie('authorization', json)
           router.push('/')   
