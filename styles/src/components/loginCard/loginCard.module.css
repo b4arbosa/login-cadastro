@@ -1,6 +1,6 @@
 .card {
     background-color: #ffff;
-    width: 550px;
+    width: 40vw;
     padding: 50px 30px 50px 30px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -15,4 +15,30 @@
     font-size: 58px;
     font-weight: 600;
     margin-bottom: -20px;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 90vw; /* Ajusta a largura para quase a largura total da tela */
+        padding: 4em 1em; /* Reduz o padding para telas menores */
+    }
+
+    .title {
+        font-size: 4em; /* Reduz o tamanho da fonte para caber melhor na tela */
+        margin-bottom: -10px; /* Ajusta o espaçamento */
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90vw; /* Ajusta a largura para quase a largura total da tela */
+        padding: 1em 1em; /* Reduz o padding para telas menores */
+    }
+
+    .title {
+        font-size: 2em; /* Reduz o tamanho da fonte para caber melhor na tela */
+        margin-bottom: -10px; /* Ajusta o espaçamento */
+        text-align: center;
+    }
 }

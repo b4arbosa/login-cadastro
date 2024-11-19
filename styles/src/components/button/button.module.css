@@ -1,5 +1,5 @@
 .button {
-    padding: 15px 30px;
+    padding: 1em 2em;
     border-radius: 15px;
     background-color: #F4882A;
     border: none;
@@ -9,4 +9,10 @@
     width: 250px;
     font-weight: bolder;
     margin: 15px auto;
+}
+
+@media (max-width: 1024px) {
+    .button {
+        font-size: 1.2em;
+    }
 }

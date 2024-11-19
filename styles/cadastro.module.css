@@ -12,12 +12,11 @@
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
-    padding-bottom: 120px;
 }
 
 
 .header {
-    min-height: 240px;
+    height: 240px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -31,6 +30,7 @@
     width: 100%;
     padding: 0 120px;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .form {
@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;       
     justify-content: space-between; 
-    max-width: 100%;
+    width: 100%;
 }
 
 .labelinput {
@@ -76,10 +76,6 @@
     font-weight: 700;
 }
 
-.svgtitle {
-    font-size: 600px;
-    font-weight: 700;
-}
 
 .headertitleblack {
     font-size: 60px;
@@ -104,4 +100,81 @@
 
 .imgdiv svg {
     height: 700px;
+}
+
+@media (max-width: 1024px) {
+
+    /* .background {
+        padding-bottom: 200px;
+    } */
+
+    .divheader {
+        display: none;
+    }
+
+
+    .imgdiv {
+        display: none;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto 0;
+        width: 100%;
+    }
+
+    .form {
+        font-size: 1.4em;
+    }
+
+    }
+
+
+@media (max-width: 768px) {
+
+.divheader {
+    display: none;
+}
+
+.header {
+    height: 20vh;
+ }
+
+.headertitle {
+    font-size:2.5em;
+}
+
+.logosvg {
+    width: 50px;
+    height: 55px;
+}
+
+    .imgdiv {
+    display: none;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.form {
+    font-size: 0.75em;
+}
+
+.numberdate {
+    flex-direction: column;
+}
+
+.labelinput {
+    width: 100%;
+    margin: 10px;
+}
+
+
+
 }
