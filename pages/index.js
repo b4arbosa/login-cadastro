@@ -1,6 +1,6 @@
 import { getCookie } from "cookies-next"
 import { useEffect } from "react"
-import { verifica } from "@/services/user"
+import { login } from "@/services/user"
 
 
 export default function Home() {
@@ -11,23 +11,26 @@ export default function Home() {
   )
 }
 
-export const getServerSideProps = async ({ req, res }) => {
-  try {
-    const token = getCookie('authorization' , { req, res })
-    if (!token) throw new Error("Token Inválido!")
-    verifica(token)
+
+export const getServerSideProps = async (context) => {
+  // Obter o token do cookie (passando req e res do contexto)
+  const token = await getCookie("authorization", {
+    req: context.req,
+    res: context.res,
+  });
+
+  // Verifica se o token existe
+  if (!token) {
     return {
-      props: {}
-    }
-  } catch (err) {
-    return {
-      redirect :{
+      redirect: {
         permanent: false,
-        destination: '/login',
-      } ,
-      props: {}
-    }
+        destination: "/login", // Redireciona para a página de login
+      },
+    };
   }
 
-
-}
+  // Caso o token exista, retorna props normais
+  return {
+    props: {}, // Dados a serem passados para a página
+  };
+};

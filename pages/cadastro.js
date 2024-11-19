@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { setCookie } from 'cookies-next'
+import { removeCookies,setCookie } from 'cookies-next'
 import { useRouter } from 'next/router'
 
 import styles from '../styles/cadastro.module.css'
@@ -36,9 +36,11 @@ export default function CadastroPage() {
                 body: JSON.stringify(formData)
             })
             const json = await response.json()
-            if (response.status !==201) throw new Error(json)
+            if (response.status !==200) throw new Error(json)
+            const  bodyJson =JSON.stringify(formData)
 
           setCookie('authorization', json)
+          localStorage.setItem('login',bodyJson )
           router.push('/')   
         } catch (err) {
             setError(err.message)

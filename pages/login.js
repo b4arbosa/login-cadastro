@@ -1,15 +1,16 @@
 import Link from 'next/link'
 import styles from '../styles/login.module.css'
-import { setCookie } from 'cookies-next'
+import { setCookie , getCookie } from 'cookies-next'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { verifica } from '@/services/user'
-
+import { readToken } from '@/services/user'
+import { login } from '@/services/user'
 import LoginCard from "@/styles/src/components/loginCard/loginCard"
 import Input from '@/styles/src/components/loginCard/input/input'
 import Button from '@/styles/src/components/button/button'
 
 export default function LoginPage() {
+
     const [form, setForm] = useState({
       email: '',
       password: ''
@@ -29,21 +30,37 @@ export default function LoginPage() {
   
       if (!form.email) return setError('O e-mail é obrigatório')
       if (!form.password) return setError('a senha é obrigatório')
-  
       setError('')
+
+      
+      
       try {
+        const userObj ={
+          token:getCookie('authorization'),
+          login:JSON.stringify(form)
+        }
         const response = await fetch(`/api/user/login`, {
           method: 'POST',
-          body: JSON.stringify(form)
+          body: JSON.stringify(userObj)
         })
-  
+
         const json = await response.json()
-  
-        if (response.status !== 200) throw new Error(json)
-        setCookie('authorization', json)
-        router.push('/')
+        if (response.status == 200) {
+          const usuario = await localStorage.getItem('login')
+          const usuarioJson = JSON.parse(usuario)
+          
+          if (usuarioJson.email == form.email && usuarioJson.password == form.password) {
+            router.push('/') 
+            
+          }else{
+            setError('Usuario ou senha incorreta')
+          }
+        }else{
+          setError(json)
+        }
       } catch (err) {
-        setError(err.message)
+        if (response.status !== 200) throw new Error(json)
+        setError(error)
       }
     }
 
