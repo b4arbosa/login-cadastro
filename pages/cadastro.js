@@ -41,7 +41,7 @@ export default function CadastroPage() {
 
           setCookie('authorization', json)
           localStorage.setItem('login',bodyJson )
-          router.push('/')   
+          router.push('/login')   
         } catch (err) {
             setError(err.message)
         }
