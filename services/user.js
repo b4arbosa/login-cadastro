@@ -1,8 +1,5 @@
-import { setCookie,getCookie } from 'cookies-next'
-
 import jwt from 'jsonwebtoken'
 import Error from 'next/error'
-let users = []
 
 const SECRET = process.env.JWT_SECRET
 
@@ -19,13 +16,12 @@ export function readToken(token) {
 }
  
 export function  cadastro(body) {
-  // const user = users.find(({ email }) => email === body.email)
-  // if (user) throw new Error('usuario ja cadastrado')
-
-  // users.push(body) //substituir por um BD
+  
 
   const token =  generateToken(body)
   
+  
+
   return token
 }
 
@@ -45,7 +41,7 @@ export function login(token) {
       console.log('Payload do token:', decoded);
   
       // (Opcional) Valida o token com a chave secreta
-      const secretKey = process.env.JWT_SECRET; // Troque pela sua chave real
+      const secretKey = process.env.JWT_SECRET;
       const verified = jwt.verify(tokenJson.token, secretKey);
       console.log('Token validado:', verified);
       console.log();

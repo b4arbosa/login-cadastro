@@ -1,5 +1,7 @@
 import { cadastro } from "@/services/user";
 
+
+//funcionamento do cadastro
     export default  function handler(req, res) {
        try {
         const newUser =cadastro(req.body)
