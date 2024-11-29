@@ -5,6 +5,7 @@ import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 import MetaEditor from '../components/MetaEditor';
 import { useRouter } from 'next/router';
+import AlertList from '@/components/AlertList';
 
 const Home = () => {
   const [barData, setBarData] = useState([]); // Dados do gráfico
@@ -132,11 +133,7 @@ const Home = () => {
             <FaExclamationTriangle style={{ color: '#FFA500', marginRight: '10px' }} />
             Alertas
           </h2>
-          <ul>
-            {alerts.map((alert, index) => (
-              <li key={index}>{alert}</li>
-            ))}
-          </ul>
+          <AlertList alerts={alerts} />
         </div>
         <h2 style={{ fontSize: '2em' }}>Gráfico Comparativo</h2>
         <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '15px', backgroundColor: '#FAFAD2' }}>
