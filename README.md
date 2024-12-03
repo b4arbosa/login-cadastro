@@ -1,3 +1,5 @@
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -38,3 +40,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+Alunos: Flávio José de Albuquerquer Barbosa - 01648810
+        Luiz Fellipe Nunes Sassaki - 01608282
+        Davi dos Santos Lima - 01358277
+        Breno Miguel Soares da Silva - 01607454
+        Caio Gomes Ferrão D'avila - 01600639
+        Pedro Dutra de Albuqeurque Macedo - 01602996
